@@ -3,9 +3,11 @@ const express   = require('express');
 const app       = express();
 const port      = 3000;
 const mongoose  = require('mongoose');
+const bodyParser = require('body-parser');
 
 // Middleware
 app.use(express.static('public'));
+app.use(bodyParser.urlencoded({extended:false}));
 const roygbivController = require('./controllers/roygbiv.js');
 app.use('/roygbiv', roygbivController);
 
