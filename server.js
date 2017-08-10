@@ -1,13 +1,17 @@
 //Global Variables
-const express   = require('express');
-const app       = express();
-const port      = 3000;
-const mongoose  = require('mongoose');
-const bodyParser = require('body-parser');
+const express   		 = require('express');
+const app       		 = express();
+const port      		 = 3000;
+const mongoose  		 = require('mongoose');
+const bodyParser		 = require('body-parser');
+const methodOverride = require('method-override')
 
 // Middleware
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({extended:false}));
+app.use(methodOverride('_method'));
+
+//Controller Middleware
 const roygbivController = require('./controllers/roygbiv.js');
 app.use('/roygbiv', roygbivController);
 

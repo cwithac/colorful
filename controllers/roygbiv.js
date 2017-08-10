@@ -9,15 +9,29 @@ router.get('/', (req, res)=>{
 		res.render('roygbiv/index.ejs', {
 			colors: foundColors
 		});
-	})
+	});
 });
 
 router.get('/create', (req, res)=>{
 	res.render('roygbiv/create.ejs');
 });
 
+router.get('/:id', (req, res) => {
+	Roygbiv.findById(req.params.id, (err, foundAColor) => {
+		res.render('roygbiv/read.ejs', {
+			color: foundAColor
+		});
+	});
+});
+
 router.post('/', (req, res) => {
 	Roygbiv.create(req.body, (err, createdColor)=>{
+		res.redirect('/roygbiv');
+	});
+});
+
+router.delete('/:id', (req, res) => {
+	Roygbiv.findByIdAndRemove(req.params.id, () => {
 		res.redirect('/roygbiv');
 	});
 });

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include ../partials/head.ejs %>
+  </head>
+  <body>
+    <h1>Show Page for <%=color.name%></h1>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/roygbiv">ROYGBIV Index</a></li>
+      </ul>
+    </nav>
+    <main>
+      <section>
+        Color: <%=color.name%>
+      </section>
+      <section>
+        <form action="/roygbiv/<%=color._id%>?_method=DELETE" method="POST">
+          <input type="submit" value="Delete <%=color.name%>">
+        </form>
+      </section>
+    </main>
+  </body>
+</html>
