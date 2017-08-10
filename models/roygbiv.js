@@ -3,7 +3,9 @@ const mongoose = require('mongoose');
 
 //Schema
 const roygbivSchema = mongoose.Schema({
-	name: String
+	name: String,
+	hex: String,
+	description: String
 });
 
 //Listeners
