@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include ../partials/head.ejs %>
+  </head>
+  <body>
+    <h1>Create a ROYGBIV</h1>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/roygbiv">ROYGBIV Home</a></li>
+      </ul>
+    </nav>
+    <main>
+      <form action="/roygbiv/<%=color._id%>?_method=PUT" method="POST">
+        <input type="text" name="name" value="<%=color.name%>"/>
+        <input type="submit" value="Update <%=color.name%>" />
+      </form>
+    </main>
+  </body>
+</html>

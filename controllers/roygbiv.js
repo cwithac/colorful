@@ -36,5 +36,19 @@ router.delete('/:id', (req, res) => {
 	});
 });
 
+router.get('/:id/update', (req, res) => {
+	Roygbiv.findById(req.params.id, (err, foundAColor) => {
+		res.render('roygbiv/update.ejs', {
+			color: foundAColor
+		})
+	});
+});
+
+router.put('/:id', (req, res) => {
+	Roygbiv.findByIdAndUpdate(req.params.id, req.body, () => {
+		res.redirect('/roygbiv');
+	});
+});
+
 //Listners
 module.exports = router;
