@@ -7,5 +7,9 @@ router.get('/', (req, res)=>{
 	res.render('roygbiv/index.ejs');
 });
 
+router.get('/create', (req, res)=>{
+	res.render('roygbiv/create.ejs');
+});
+
 //Listners
 module.exports = router;

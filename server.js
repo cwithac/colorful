@@ -2,6 +2,7 @@
 const express   = require('express');
 const app       = express();
 const port      = 3000;
+const mongoose  = require('mongoose');
 
 // Middleware
 app.use(express.static('public'));
@@ -14,6 +15,12 @@ app.get('/', (req, res) => {
 });
 
 //Listners
+mongoose.connect('mongodb://localhost:27017/colorful');
+
+mongoose.connection.once('open', () => {
+	console.log('colorful app connected to mongo');
+});
+
 app.listen(port, () => {
 	console.log('colorful app connected to app listener');
 });
