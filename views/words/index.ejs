@@ -9,5 +9,15 @@
       <li><a href="/">Home</a></li>
       <li><a href="/words/create">Create a new color word</a></li>
     </ul>
+    <main>
+    	<h2>List of Words</h2>
+    	<ul>
+    		<% for(let i = 0; i < words.length; i++){ %>
+    			<li>
+    				<a href="/words/<%=words[i]._id%>"><%=words[i].name%></a>
+    			</li>
+    		<% } %>
+    	</ul>
+    </main>
   </body>
 </html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include ../partials/head.ejs %>
+  </head>
+  <body>
+    <h1>Create a Word</h1>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/words">Words Home</a></li>
+      </ul>
+    </nav>
+    <main>
+      <form action="/words" method="POST">
+        <input type="text" name="name" placeholder="name"/>
+        <input type="text" name="hex" placeholder="hex"/>
+        <input type="submit" value="Create" />
+      </form>
+    </main>
+  </body>
+</html>
