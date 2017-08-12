@@ -30,6 +30,11 @@ router.get('/:id', (req, res) => {
   });
 });
 
+router.delete('/:id', (req, res) => {
+  Word.findByIdAndRemove(req.params.id, () => {
+    res.redirect('/words')
+  });
+});
 
 //Listners
 module.exports = router;

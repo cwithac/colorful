@@ -16,6 +16,11 @@
         Color: <%=word.name%>
         Hex: <%=word.hex%>
       </section>
+      <section>
+        <form action="/words/<%=word._id%>?_method=DELETE" method="post">
+            <input type="submit" value="Delete Word"/>
+        </form>
+      </section>
     </main>
   </body>
 </html>
