@@ -22,6 +22,14 @@ router.post('/', (req, res) => {
   });
 });
 
+router.get('/:id', (req, res) => {
+  Word.findById(req.params.id, (err, foundWord)=>{
+    res.render('words/read.ejs', {
+      word: foundWord
+    });
+  });
+});
+
 
 //Listners
 module.exports = router;

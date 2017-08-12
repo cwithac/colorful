@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include ../partials/head.ejs %>
+  </head>
+  <body>
+    <h1>Show Page for <%=word.name%></h1>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/words">word Index</a></li>
+      </ul>
+    </nav>
+    <main>
+      <section>
+        Color: <%=word.name%>
+        Hex: <%=word.hex%>
+      </section>
+    </main>
+  </body>
+</html>
