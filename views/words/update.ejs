@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include ../partials/head.ejs %>
+  </head>
+  <body>
+    <h1>Edit a word</h1>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/words">words Home</a></li>
+      </ul>
+    </nav>
+    <main>
+      <form action="/words/<%=word._id%>?_method=PUT" method="POST">
+        <input type="text" name="name" value="<%=word.name%>"/>
+        <input type="text" name="hex" value="<%=word.hex%>"/>
+        <input type="submit" value="Update <%=word.name%>" />
+      </form>
+    </main>
+  </body>
+</html>

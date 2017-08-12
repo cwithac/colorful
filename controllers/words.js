@@ -36,5 +36,19 @@ router.delete('/:id', (req, res) => {
   });
 });
 
+router.get('/:id/update', (req, res) => {
+  Word.findById(req.params.id, (err, foundWord) => {
+    res.render('words/update.ejs', {
+      word: foundWord
+    });
+  });
+});
+
+router.put('/:id', (req, res) => {
+  Word.findByIdAndUpdate(req.params.id, req.body, () => {
+    res.redirect('/words');
+  });
+});
+
 //Listners
 module.exports = router;
