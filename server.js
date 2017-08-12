@@ -15,6 +15,9 @@ app.use(methodOverride('_method'));
 const roygbivController = require('./controllers/roygbiv.js');
 app.use('/roygbiv', roygbivController);
 
+const wordsController = require('./controllers/words.js');
+app.use('/words', wordsController);
+
 //Restful Routes
 app.get('/', (req, res) => {
 	res.render('index.ejs');
