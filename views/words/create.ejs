@@ -13,6 +13,11 @@
     </nav>
     <main>
       <form action="/words" method="POST">
+        <select name="wordId">
+          <% for (let i = 0; i < colors.length; i++) { %>
+              <option value="<%=colors[i]._id%>"><%=colors[i].name%></option>
+          <% } %>
+        </select><br/>
         <input type="text" name="name" placeholder="name"/>
         <input type="text" name="hex" placeholder="hex"/>
         <input type="submit" value="Create" />

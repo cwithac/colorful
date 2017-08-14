@@ -1,11 +1,13 @@
 //Global Variables
 const mongoose = require('mongoose');
+const Word = require('./words.js');
 
 //Schema
 const roygbivSchema = mongoose.Schema({
 	name: String,
 	hex: String,
-	description: String
+	description: String,
+	words: [Word.schema]
 });
 
 //Listeners
