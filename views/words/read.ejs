@@ -15,6 +15,7 @@
       <section>
         Color: <%=word.name%>
         Hex: <%=word.hex%>
+        Family: <a href="/roygbiv/<%=color._id%>"><%=color.name%></a>
       </section>
       <section>
         <form action="/words/<%=word._id%>?_method=DELETE" method="post">

@@ -22,15 +22,23 @@ router.get('/create', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-  Word.create(req.body, (err, createdWord) => {
-    res.redirect('/words')
+  Roygbiv.findById(req.body.roygbivId, (err, foundColor)=>{
+    Word.create(req.body, (err, createdWord) => {
+      foundColor.words.push(createdWord);
+      foundColor.save((err, data)=>{
+        res.redirect('/words');
+      });
+    });
   });
 });
 
 router.get('/:id', (req, res) => {
   Word.findById(req.params.id, (err, foundWord)=>{
-    res.render('words/read.ejs', {
-      word: foundWord
+    Roygbiv.findOne({'words._id':req.params.id}, (err, foundColor)=>{
+      res.render('words/read.ejs', {
+        color: foundColor,
+        word: foundWord
+      });
     });
   });
 });

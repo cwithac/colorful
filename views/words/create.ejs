@@ -13,7 +13,7 @@
     </nav>
     <main>
       <form action="/words" method="POST">
-        <select name="wordId">
+        <select name="roygbivId">
           <% for (let i = 0; i < colors.length; i++) { %>
               <option value="<%=colors[i]._id%>"><%=colors[i].name%></option>
           <% } %>
