@@ -63,8 +63,14 @@ router.get('/:id/update', (req, res) => {
 });
 
 router.put('/:id', (req, res) => {
-  Word.findByIdAndUpdate(req.params.id, req.body, () => {
-    res.redirect('/words');
+  Word.findByIdAndUpdate(req.params.id, req.body, { new: true }, (err, updatedWord) => {
+    Roygbiv.findOne({'words._id' : req.params.id }, (err, foundColor) => {
+      foundColor.words.id(req.params.id).remove();
+      foundColor.words.push(updatedWord);
+      foundColor.save((err, data) => {
+        res.redirect('/words');
+      });
+    });
   });
 });
 
