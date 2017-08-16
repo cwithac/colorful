@@ -1,7 +1,8 @@
 //Global Variables
 const express 	= require('express');
 const router 		= express.Router();
-const Roygbiv 		= require('../models/roygbiv.js');
+const Roygbiv 	= require('../models/roygbiv.js');
+const Word 			= require('../models/words.js')
 
 //Restful Routes
 router.get('/', (req, res)=>{
@@ -31,8 +32,21 @@ router.post('/', (req, res) => {
 });
 
 router.delete('/:id', (req, res) => {
-	Roygbiv.findByIdAndRemove(req.params.id, () => {
-		res.redirect('/roygbiv');
+	Roygbiv.findByIdAndRemove(req.params.id, (err, foundAColor) => {
+		const wordIDs = [];
+		for (let i = 0; i < foundAColor.words.length; i++) {
+			wordIDs.push(foundAColor.words[i]._id);
+		}
+		Word.remove(
+			{
+				_id: {
+					$in: wordIDs
+				}
+			},
+			(err, data) => {
+				res.redirect('/roygbiv');
+			}
+		);
 	});
 });
 
