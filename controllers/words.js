@@ -45,7 +45,12 @@ router.get('/:id', (req, res) => {
 
 router.delete('/:id', (req, res) => {
   Word.findByIdAndRemove(req.params.id, () => {
-    res.redirect('/words')
+    Roygbiv.findOne({'words._id':req.params.id}, (err, foundColor) => {
+      foundColor.words.id(req.params.id).remove();
+      foundColor.save((err, data) => {
+        res.redirect('/words')
+      })
+    })
   });
 });
 
