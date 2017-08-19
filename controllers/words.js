@@ -22,6 +22,12 @@ router.get('/create', (req, res) => {
 });
 
 router.post('/', (req, res) => {
+  if (req.body.name === "") {
+    req.body.name = '?'
+  }
+  if (req.body.hex === '') {
+    req.body.hex = '#AAAAAA'
+  }
   Roygbiv.findById(req.body.roygbivId, (err, foundColor)=>{
     Word.create(req.body, (err, createdWord) => {
       foundColor.words.push(createdWord);
