@@ -28,6 +28,11 @@ module.exports = [
     name: "violet",
     hex: '#B10DC9',
     description: 'a bluish-purple color seen at the end of the spectrum opposite red'
+  },
+  {
+    name: "gray",
+    hex: '#AAAAAA',
+    description: 'a color intermediate between black and white, as of ashes or an overcast sky'
   }
 ];
 
