@@ -10,13 +10,16 @@
     </nav>
     <main>
       <form action="/words" method="POST">
+        <label for="select">Color Family</label>
         <select name="roygbivId">
           <% for (let i = 0; i < colors.length; i++) { %>
               <option value="<%=colors[i]._id%>"><%=colors[i].name%></option>
           <% } %>
         </select>
-        <input type="text" name="name" placeholder="name"/>
-        <input type="text" name="hex" placeholder="#hex color code"/>
+        <label for="select">Color Name</label>
+        <input type="text" name="name" placeholder="ruby, sapphire..."/>
+        <label for="select">Hex Color Code</label>
+        <input type="text" name="hex" placeholder="example: #000000"/>
         <input type="submit" value="Add" />
       </form>
     </main>
