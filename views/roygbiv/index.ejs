@@ -15,11 +15,11 @@
     <h2>List of Colors</h2>
     <ul>
         <% for(let i = 0; i < colors.length; i++){ %>
-            <li>
-                <a style="background-color:<%=colors[i].hex%>" href="/roygbiv/<%=colors[i]._id%>">
+            <div style="background-color:<%=colors[i].hex%>" class="colorfamily">
+                <a href="/roygbiv/<%=colors[i]._id%>">
                   <%=colors[i].name%>
                 </a>
-            </li>
+            </div>
         <% } %>
     </ul>
 </main>
