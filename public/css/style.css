@@ -175,3 +175,41 @@ label {
   font-size: 20px;
   margin-top: 3%;
 }
+
+/*UNIQUE COLOR*/
+.content a {
+  font-size: 1em;
+}
+
+.content a:hover {
+  text-decoration: underline;
+}
+
+.show-form {
+  display: block;
+}
+
+.edit-delete {
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column-reverse;
+}
+
+.edit-delete a {
+  display: flex;
+  font-size: 1em;
+}
+
+#edit-delete-button {
+  font-size: 1em !important;
+  background-color: white;
+  border: 1px solid white;
+  padding: 0 !important;
+  height: 15px;
+  width: 60px;
+  margin-left: 8%;
+}
+
+#edit-delete-button:hover, .edit-delete a:hover {
+  color: #AAAAAA;
+}

@@ -4,23 +4,24 @@
     <% include ../partials/head.ejs %>
   </head>
   <body class="container" style="background-color:<%=word.hex%>">
-    <h1>Show Page for <%=word.name%></h1>
+    <h1><%=word.name%></h1>
     <nav>
       <% include ../partials/nav.ejs %>
     </nav>
     <main class="text-box">
       <section>
-        Color: <%=word.name%>
-        Hex: <%=word.hex%>
-        Family: <a href="/roygbiv/<%=color._id%>"><%=color.name%></a>
+        <div class="content">
+          <span class="text-label">Hex Color Code:</span>
+          <span style="color:<%=word.hex%>"><%=color.hex%></span><br/>
+          <span class="text-label">Color Family:</span>
+          <a style="color:<%=color.hex%>" href="/roygbiv/<%=color._id%>"><%=color.name%></a>
+        </div>
       </section>
-      <section>
-        <form action="/words/<%=word._id%>?_method=DELETE" method="post">
-            <input type="submit" value="Delete Word"/>
+      <section class="edit-delete">
+        <form class="show-form" action="/words/<%=word._id%>?_method=DELETE" method="post">
+            <input id="edit-delete-button" type="submit" value="delete"/>
         </form>
-      </section>
-      <section>
-        <a href="/words/<%=word._id%>/update">Update</a>
+        <a href="/words/<%=word._id%>/update">edit</a>
       </section>
     </main>
   </body>
