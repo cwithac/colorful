@@ -11,30 +11,24 @@
 
 /*LANDING PAGE*/
 #landing-page {
-  background-image: url('../images/color_background.jpg');
+  background-image: url('../images/color_grad.png');
+  background-size: 100% 100%;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: left;
 }
 
-#landing-page h1 {
-  position: absolute;
+#landing-page a {
+  position: fixed;
   top: 31%;
   left: 3%;
-  font-size: 3em;
-}
-
-#landing-page a {
-  font-size: 1em;
-  position: absolute;
-  top: 38%;
-  left: 11%;
+  font-size: 7vw;
   text-decoration: none;
-  color: #AAAAAA
+  color: #FFFFFF;
 }
 
 #landing-page a:hover {
-  color: #DDDDDD
+  color: #111111;
 }
 
 /*NAVIGATION*/
