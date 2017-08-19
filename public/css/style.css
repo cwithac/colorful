@@ -114,4 +114,7 @@ main ul {
 .text-box {
   padding: 2%;
   background-color: #FFFFFF;
+  box-shadow: 10px 10px 5px #111111;
+  width: 75%;
+  margin: 0 auto;
 }
