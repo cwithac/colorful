@@ -56,8 +56,14 @@ router.delete('/:id', (req, res) => {
 
 router.get('/:id/update', (req, res) => {
   Word.findById(req.params.id, (err, foundWord) => {
-    res.render('words/update.ejs', {
-      word: foundWord
+    Roygbiv.find({}, (err, allColors) => {
+      Roygbiv.findOne({'words._id':req.params.id}, (err, foundWordColor) => {
+        res.render('words/update.ejs', {
+          word: foundWord,
+          colors: allColors,
+          wordColor: foundWordColor
+        });
+      });
     });
   });
 });
@@ -65,11 +71,23 @@ router.get('/:id/update', (req, res) => {
 router.put('/:id', (req, res) => {
   Word.findByIdAndUpdate(req.params.id, req.body, { new: true }, (err, updatedWord) => {
     Roygbiv.findOne({'words._id' : req.params.id }, (err, foundColor) => {
-      foundColor.words.id(req.params.id).remove();
-      foundColor.words.push(updatedWord);
-      foundColor.save((err, data) => {
-        res.redirect('/words');
-      });
+      if(foundColor._id.toString() !== req.body.colorID){
+        foundColor.words.id(req.params.id).remove();
+        foundColor.save((err, savedFoundColor) => {
+          Roygbiv.findById(req.body.colorID, (err, newColor) => {
+            newColor.words.push(updatedWord);
+            newColor.save((err, savedFoundColor) => {
+              res.redirect('/words/' + req.params.id);
+            });
+          });
+        });
+      } else {
+        foundColor.words.id(req.params.id).remove();
+        foundColor.words.push(updatedWord);
+        foundColor.save((err, data) => {
+          res.redirect('/words/' + req.params.id);
+        });
+      }
     });
   });
 });

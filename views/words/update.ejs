@@ -13,6 +13,18 @@
     </nav>
     <main>
       <form action="/words/<%=word._id%>?_method=PUT" method="POST">
+        <select name="colorID">
+          <% for(let i = 0; i < colors.length; i++) { %>
+            <option
+            value="<%=colors[i]._id%>"
+              <% if (colors[i]._id.toString() === wordColor._id.toString()) { %>
+                selected
+              <% } %>
+              >
+              <%=colors[i].name%>
+            </option>
+          <% } %>
+        </select><br/>
         <input type="text" name="name" value="<%=word.name%>"/>
         <input type="text" name="hex" value="<%=word.hex%>"/>
         <input type="submit" value="Update <%=word.name%>" />
