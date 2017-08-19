@@ -4,12 +4,11 @@
     <% include ../partials/head.ejs %>
   </head>
   <body class="container">
-    <h1>ROYGBIV</h1>
+    <h1>Color Families</h1>
     <nav>
       <% include ../partials/nav.ejs %>
     </nav>
     <main>
-    <h2>List of Colors</h2>
     <ul>
         <% for(let i = 0; i < colors.length; i++){ %>
             <div style="background-color:<%=colors[i].hex%>" class="color-family">

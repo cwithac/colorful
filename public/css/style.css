@@ -39,7 +39,6 @@
 }
 
 /*NAVIGATION*/
-
 nav ul {
   display: flex;
   justify-content: flex-end;
@@ -50,9 +49,11 @@ nav li {
   padding: 1%;
 }
 
+i {
+  text-shadow: 1px 1px #FFFFFF;
+}
+
 /*ROYGBIV*/
-
-
 .container {
   margin: 5%;
 }
@@ -61,18 +62,52 @@ nav li {
   list-style: none;
 }
 
+.container h1 {
+  font-size: 5em;
+  text-align: center;
+  margin: -5%;
+  text-shadow: 2px 2px #FFFFFF;
+}
+
+main ul {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
 .color-family {
   padding: 5%;
+  width: 100px;
+  text-align: center;
+  margin: 1%;
 }
 
 .word-family {
   padding: 5%;
+  width: 100px;
+  text-align: center;
+  margin: 1%;
 }
 
 .word-grid {
-  padding: 5%;
+  padding: 2%;
+  width: 100px;
+  height: 15px;
+  text-align: center;
+  margin: 1%;
+}
+
+.content {
+  margin-bottom: 2%;
+  text-align: center;
+}
+
+.text-label {
+  color: #AAAAAA;
+  margin-right: 2%;
 }
 
 .text-box {
-  background-color: white;
+  padding: 2%;
+  background-color: #FFFFFF;
 }

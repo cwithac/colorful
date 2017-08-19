@@ -4,18 +4,20 @@
     <% include ../partials/head.ejs %>
   </head>
   <body class="container" style="background-color:<%=color.hex%>">
-    <h1>Show Page for <%=color.name%></h1>
+    <h1><%=color.name%></h1>
     <nav>
       <% include ../partials/nav.ejs %>
     </nav>
     <main class="text-box">
       <section>
-        Color: <%=color.name%>
-        Hex: <%=color.hex%>
-        Description: <%=color.description%>
+        <div class="content">
+          <span class="text-label">Hex Color Code: <%=color.hex%></span>
+        </div>
+        <div class="content">
+          <span><%=color.description%></span><br/>
+        </div>
       </section>
       <section>
-        <h2>Colors in this Family:</h2>
         <ul>
           <% for (let i = 0; i < color.words.length; i++) { %>
             <div style="background-color:<%=color.words[i].hex%>" class="word-grid">
@@ -24,14 +26,14 @@
           <% } %>
         </ul>
       </section>
-      <section>
+      <!-- <section>
         <form action="/roygbiv/<%=color._id%>?_method=DELETE" method="POST">
           <input type="submit" value="Delete <%=color.name%>">
         </form>
       </section>
       <section>
         <a href="/roygbiv/<%=color._id%>/update">Update</a>
-      </section>
+      </section> -->
     </main>
   </body>
 </html>
