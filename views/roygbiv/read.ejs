@@ -21,7 +21,9 @@
         <h2>Colors in this Family:</h2>
         <ul>
           <% for (let i = 0; i < color.words.length; i++) { %>
-            <li><a href="/words/<%=color.words[i]._id%>"><%=color.words[i].name%></a></li>
+            <div style="background-color:<%=color.words[i].hex%>" class="word-grid">
+              <a href="/words/<%=color.words[i]._id%>"><%=color.words[i].name%></a>
+            </div>
           <% } %>
         </ul>
       </section>

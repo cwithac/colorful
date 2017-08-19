@@ -13,9 +13,9 @@
     	<h2>List of Words</h2>
     	<ul>
     		<% for(let i = 0; i < words.length; i++){ %>
-    			<li>
+    			<div style="background-color:<%=words[i].hex%>" class="word-family">
     				<a href="/words/<%=words[i]._id%>"><%=words[i].name%></a>
-    			</li>
+    			</div>
     		<% } %>
     	</ul>
     </main>
