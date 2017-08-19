@@ -34,7 +34,8 @@
 /*NAVIGATION*/
 nav ul {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
+  margin: 1% auto;
 }
 
 nav li {
@@ -42,8 +43,16 @@ nav li {
   padding: 1%;
 }
 
+a:hover {
+  color: #FFFFFF;
+}
+
 i {
   text-shadow: 1px 1px #FFFFFF;
+}
+
+i:hover {
+  color: #AAAAAA;
 }
 
 /*ROYGBIV*/
@@ -66,17 +75,15 @@ i {
 
 main ul {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   flex-wrap: wrap;
-  height: 300px;
 }
 
 .color-family {
-  padding: 5%;
-  width: 100px;
+  padding: 2%;
   text-align: center;
-  margin: 1%;
-  border-radius: 5px;
+  margin: .25%;
+  border-radius: 3px;
 }
 
 .word-family {
