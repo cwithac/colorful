@@ -31,38 +31,38 @@ router.post('/', (req, res) => {
 	});
 });
 
-router.delete('/:id', (req, res) => {
-	Roygbiv.findByIdAndRemove(req.params.id, (err, foundAColor) => {
-		const wordIDs = [];
-		for (let i = 0; i < foundAColor.words.length; i++) {
-			wordIDs.push(foundAColor.words[i]._id);
-		}
-		Word.remove(
-			{
-				_id: {
-					$in: wordIDs
-				}
-			},
-			(err, data) => {
-				res.redirect('/roygbiv');
-			}
-		);
-	});
-});
-
-router.get('/:id/update', (req, res) => {
-	Roygbiv.findById(req.params.id, (err, foundAColor) => {
-		res.render('roygbiv/update.ejs', {
-			color: foundAColor
-		})
-	});
-});
-
-router.put('/:id', (req, res) => {
-	Roygbiv.findByIdAndUpdate(req.params.id, req.body, () => {
-		res.redirect('/roygbiv');
-	});
-});
+// router.delete('/:id', (req, res) => {
+// 	Roygbiv.findByIdAndRemove(req.params.id, (err, foundAColor) => {
+// 		const wordIDs = [];
+// 		for (let i = 0; i < foundAColor.words.length; i++) {
+// 			wordIDs.push(foundAColor.words[i]._id);
+// 		}
+// 		Word.remove(
+// 			{
+// 				_id: {
+// 					$in: wordIDs
+// 				}
+// 			},
+// 			(err, data) => {
+// 				res.redirect('/roygbiv');
+// 			}
+// 		);
+// 	});
+// });
+//
+// router.get('/:id/update', (req, res) => {
+// 	Roygbiv.findById(req.params.id, (err, foundAColor) => {
+// 		res.render('roygbiv/update.ejs', {
+// 			color: foundAColor
+// 		})
+// 	});
+// });
+//
+// router.put('/:id', (req, res) => {
+// 	Roygbiv.findByIdAndUpdate(req.params.id, req.body, () => {
+// 		res.redirect('/roygbiv');
+// 	});
+// });
 
 //Seed Route
 //@roygbiv/seed/roygbiv
