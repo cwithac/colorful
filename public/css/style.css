@@ -161,6 +161,11 @@ input[type=submit] {
   margin: 1%;
 }
 
+input[type=text] {
+  font-size: 20px;
+  padding-left: 1%;
+}
+
 input::placeholder {
   font-size: 20px;
   padding-left: 1%;
