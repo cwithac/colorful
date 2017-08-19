@@ -64,5 +64,17 @@ router.put('/:id', (req, res) => {
 	});
 });
 
+//Seed Route
+const colorSeeds = require ('../models/colorseed.js');
+	router.get ('/seed/roygbiv', (req, res) => {
+		Roygbiv.insertMany (colorSeeds, (err, colors) => {
+			if (err) {
+				console.log(err);
+			} else {
+				res.send(colors);
+			}
+		});
+	});
+
 //Listners
 module.exports = router;
