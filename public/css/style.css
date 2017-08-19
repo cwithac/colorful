@@ -1,3 +1,39 @@
+/*FONT IMPORTS*/
+@import url('https://fonts.googleapis.com/css?family=Stalemate');
+@import url('https://fonts.googleapis.com/css?family=Special+Elite');
+
+* {
+  padding: 0;
+  margin: 0;
+  color: #111111;
+}
+
+/*LANDING PAGE*/
+#landing-page {
+  background-image: url('../images/color_background.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: left;
+}
+
+#landing-page h1 {
+  font-family: 'Stalemate', cursive;
+  position: absolute;
+  top: 31%;
+  left: 3%;
+  font-size: 3em;
+}
+
+#landing-page a {
+  font-family: 'Special Elite', cursive;
+  font-size: 1em;
+  position: absolute;
+  top: 38%;
+  left: 11%;
+  text-decoration: none;
+  color: #AAAAAA
+}
+
 .color-family {
   padding: 5%;
 }
