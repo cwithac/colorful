@@ -213,3 +213,11 @@ label {
 #edit-delete-button:hover, .edit-delete a:hover {
   color: #AAAAAA;
 }
+
+/*RESPONSIVE*/
+
+@media (max-width:650px) {
+  .container h1 {
+    font-size: 3em;
+  }
+}
