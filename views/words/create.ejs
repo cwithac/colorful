@@ -3,8 +3,8 @@
   <head>
     <% include ../partials/head.ejs %>
   </head>
-  <body class="container">
-    <h1>Create a Word</h1>
+  <body class="create container">
+    <h1>Add to the Thesaurus</h1>
     <nav>
       <% include ../partials/nav.ejs %>
     </nav>
@@ -14,10 +14,10 @@
           <% for (let i = 0; i < colors.length; i++) { %>
               <option value="<%=colors[i]._id%>"><%=colors[i].name%></option>
           <% } %>
-        </select><br/>
+        </select>
         <input type="text" name="name" placeholder="name"/>
-        <input type="text" name="hex" placeholder="hex"/>
-        <input type="submit" value="Create" />
+        <input type="text" name="hex" placeholder="#hex color code"/>
+        <input type="submit" value="Add" />
       </form>
     </main>
   </body>
