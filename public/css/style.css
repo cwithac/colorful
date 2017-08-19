@@ -38,7 +38,28 @@
   color: #DDDDDD
 }
 
+/*NAVIGATION*/
+
+nav ul {
+  display: flex;
+  justify-content: flex-end;
+}
+
+nav li {
+  list-style: none;
+  padding: 1%;
+}
+
 /*ROYGBIV*/
+
+
+.container {
+  margin: 5%;
+}
+
+.container a {
+  list-style: none;
+}
 
 .color-family {
   padding: 5%;
