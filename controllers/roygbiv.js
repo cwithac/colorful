@@ -72,7 +72,7 @@ const colorSeeds = require ('../models/colorseed.js');
 			if (err) {
 				console.log(err);
 			} else {
-				res.redirect('/roygbiv')
+				res.redirect('/roygbiv');
 			}
 		});
 	});
