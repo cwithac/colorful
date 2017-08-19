@@ -3,7 +3,7 @@
   <head>
     <% include ../partials/head.ejs %>
   </head>
-  <body>
+  <body style="background-color:<%=word.hex%>">
     <h1>Show Page for <%=word.name%></h1>
     <nav>
       <ul>
@@ -11,7 +11,7 @@
         <li><a href="/words">word Index</a></li>
       </ul>
     </nav>
-    <main>
+    <main class="text-box">
       <section>
         Color: <%=word.name%>
         Hex: <%=word.hex%>

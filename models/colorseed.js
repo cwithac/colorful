@@ -2,7 +2,7 @@ module.exports = [
   {
     name: "Blue",
     hex: '#0074D9',
-    description: 'blue is...',
+    description: 'blue is...'
   },
   {
     name: "Yellow",
