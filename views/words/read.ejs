@@ -6,10 +6,7 @@
   <body style="background-color:<%=word.hex%>">
     <h1>Show Page for <%=word.name%></h1>
     <nav>
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/words">word Index</a></li>
-      </ul>
+      <% include ../partials/nav.ejs %>
     </nav>
     <main class="text-box">
       <section>
