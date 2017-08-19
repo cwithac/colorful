@@ -18,7 +18,6 @@
 }
 
 #landing-page h1 {
-  font-family: 'Stalemate', cursive;
   position: absolute;
   top: 31%;
   left: 3%;
@@ -60,6 +59,8 @@ i {
 
 .container a {
   list-style: none;
+  text-decoration: none;
+  font-size: 2em;
 }
 
 .container h1 {
@@ -80,6 +81,7 @@ main ul {
   width: 100px;
   text-align: center;
   margin: 1%;
+  border-radius: 5px;
 }
 
 .word-family {
