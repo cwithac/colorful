@@ -4,8 +4,6 @@
 
 ![](http://i.imgur.com/kW6Bx5U.png)
 
-An exercise in CRUD and creativity.
-
 ### Technologies Used
 
 ```
@@ -24,5 +22,4 @@ An exercise in CRUD and creativity.
 + Dictionary.com
 + [Colors](http://clrs.cc/)
 
-![](http://i.imgur.com/pqOGg12.png)
 ![](http://i.imgur.com/fJfoZZm.png)
