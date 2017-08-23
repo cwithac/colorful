@@ -21,5 +21,6 @@
 
 ### Resources & Inspiration
 + Dictionary.com
++ [Wikipedia: ROYGBIV](https://en.wikipedia.org/wiki/ROYGBIV)
 + [Colors](http://clrs.cc/)
 + [The Color Thesaurus](http://ingridsundberg.com/2014/02/04/the-color-thesaurus/)
