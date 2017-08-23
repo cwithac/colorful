@@ -32,7 +32,7 @@ router.post('/', (req, res) => {
     Word.create(req.body, (err, createdWord) => {
       foundColor.words.push(createdWord);
       foundColor.save((err, data)=>{
-        res.redirect('/words');
+        res.redirect('/roygbiv/' + req.body.roygbivId);
       });
     });
   });
