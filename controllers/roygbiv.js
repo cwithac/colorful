@@ -25,12 +25,15 @@ router.get('/:id', (req, res) => {
 	});
 });
 
-router.post('/', (req, res) => {
-	Roygbiv.create(req.body, (err, createdColor)=>{
-		res.redirect('/roygbiv');
-	});
-});
 
+//POST DELETE AND UPDATE DISABLED FOR LIVE SITE
+
+// router.post('/', (req, res) => {
+// 	Roygbiv.create(req.body, (err, createdColor)=>{
+// 		res.redirect('/roygbiv');
+// 	});
+// });
+//
 // router.delete('/:id', (req, res) => {
 // 	Roygbiv.findByIdAndRemove(req.params.id, (err, foundAColor) => {
 // 		const wordIDs = [];
