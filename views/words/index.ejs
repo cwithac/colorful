@@ -4,15 +4,14 @@
     <% include ../partials/head.ejs %>
   </head>
   <body class="container">
-    <h1>Color Words</h1>
+    <h1>Thesaurus</h1>
     <nav>
       <% include ../partials/nav.ejs %>
     </nav>
     <main>
-    	<h2>List of Words</h2>
     	<ul>
     		<% for(let i = 0; i < words.length; i++){ %>
-    			<div style="background-color:<%=words[i].hex%>" class="word-family">
+    			<div style="background-color:<%=words[i].hex%>" class="word-grid">
     				<a href="/words/<%=words[i]._id%>"><%=words[i].name%></a>
     			</div>
     		<% } %>
