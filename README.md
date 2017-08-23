@@ -17,9 +17,9 @@
 
 ### Notes
 + Open access two model crud application.  
++ Upcoming features: Data validation, content sorting
 
 ### Resources & Inspiration
 + Dictionary.com
 + [Colors](http://clrs.cc/)
-
-![](http://i.imgur.com/fJfoZZm.png)
++ [The Color Thesaurus](http://ingridsundberg.com/2014/02/04/the-color-thesaurus/)
