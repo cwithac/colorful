@@ -83,7 +83,7 @@ router.put('/:id', (req, res) => {
           Roygbiv.findById(req.body.colorID, (err, newColor) => {
             newColor.words.push(updatedWord);
             newColor.save((err, savedFoundColor) => {
-              res.redirect('/words/' + req.params.id);
+              res.redirect('/roygbiv/' + foundColor.id)
             });
           });
         });
@@ -91,7 +91,7 @@ router.put('/:id', (req, res) => {
         foundColor.words.id(req.params.id).remove();
         foundColor.words.push(updatedWord);
         foundColor.save((err, data) => {
-          res.redirect('/words/' + req.params.id);
+          res.redirect('/roygbiv/' + foundColor.id)
         });
       }
     });
