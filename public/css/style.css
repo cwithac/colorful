@@ -32,8 +32,8 @@
 }
 
 /*NAVIGATION*/
-nav a {
-
+nav a:hover, i:hover  {
+  color: #AAAAAA;
 }
 
 nav ul {
@@ -44,7 +44,7 @@ nav ul {
 
 nav li {
   list-style: none;
-  padding: 1%;
+  padding: 1% 3%;
 }
 
 a:hover {
@@ -53,11 +53,6 @@ a:hover {
 
 i {
   text-shadow: 1px 1px #FFFFFF;
-
-}
-
-i:hover {
-  color: #AAAAAA;
 }
 
 /*ROYGBIV*/
