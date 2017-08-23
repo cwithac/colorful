@@ -3,6 +3,7 @@
 ### [Hosted on Heroku](https://colorthesaurus.herokuapp.com/)
 
 ![](http://i.imgur.com/kW6Bx5U.png)
+![](http://i.imgur.com/nd1nm5R.png)
 
 ### Technologies Used
 
