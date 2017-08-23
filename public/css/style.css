@@ -118,9 +118,9 @@ main ul {
   margin: 0 auto;
 }
 
-/*ADD FORM*/
+/*ADD FORM & EDIT FORM*/
 
-.create {
+.create, .edit {
   background-image: url('../images/color_grad.png');
   background-size: 100% 100%;
   background-repeat: no-repeat;
@@ -156,6 +156,18 @@ input[type=submit] {
 	border-right:		2px solid #111111;;
 	border-bottom:		2px solid #111111;;
 	padding:		10px 20px !important;
+	font-size:		20px !important;
+	font-weight:		bold;
+  margin: 1%;
+}
+
+#edit-submit {
+  width: 180px;
+  border-top:		2px solid #111111;
+	border-left:		2px solid #111111;;
+	border-right:		2px solid #111111;;
+	border-bottom:		2px solid #111111;;
+	padding:		10px 10px !important;
 	font-size:		20px !important;
 	font-weight:		bold;
   margin: 1%;
