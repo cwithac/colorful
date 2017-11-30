@@ -24,8 +24,9 @@ app.get('/', (req, res) => {
 });
 
 //Listners
-const mongoUri = process.env.MONGODB_URI || 'mongodb://localhost:27017/colorful';
-mongoose.connect(mongoUri);
+const mongoURI = process.env.MONGODB_URI || 'mongodb://localhost:27017/colorful';
+mongoose.connect(mongoURI, { useMongoClient: true});
+mongoose.Promise = global.Promise;
 
 mongoose.connection.once('open', () => {
 	console.log('colorful app connected to mongo');
