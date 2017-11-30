@@ -16,8 +16,17 @@
 ```
 
 ### Notes
-+ Open access two model crud application.  
-+ Upcoming features: Data validation, content sorting
++ Open access two model crud application for the purpose of using Express/EJS.
+
+### Upcoming
++ Update to ES6/7
+  + async, await
+  + update Express, remove bodyParserM
+  + try, catch
++ Data validation
++ Content sorting
+
+
 
 ### Resources & Inspiration
 + Dictionary.com
