@@ -21,7 +21,7 @@
 ### Upcoming Features
 + Update to ES6/7
   + async, await
-  + update Express, remove bodyParserM
+  + update Express, remove bodyParser
   + try, catch
 + Data validation
 + Content sorting
