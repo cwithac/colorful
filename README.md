@@ -1,8 +1,8 @@
 # Color Thesaurus
 
-### [Hosted on Heroku](https://colorthesaurus.herokuapp.com/)
-
 ![](http://i.imgur.com/nd1nm5R.png)
+
+#### [Hosted on Heroku](https://colorthesaurus.herokuapp.com/) + [Repo](https://github.com/cwithac/colorful)
 
 ### Technologies Used
 
@@ -18,15 +18,13 @@
 ### Notes
 + Open access two model crud application for the purpose of using Express/EJS.
 
-### Upcoming
+### Upcoming Features
 + Update to ES6/7
   + async, await
   + update Express, remove bodyParserM
   + try, catch
 + Data validation
 + Content sorting
-
-
 
 ### Resources & Inspiration
 + Dictionary.com
