@@ -3,12 +3,13 @@ const express   		 = require('express');
 const app       		 = express();
 const PORT      		 = process.env.PORT || 3000;
 const mongoose  		 = require('mongoose');
-const bodyParser		 = require('body-parser');
+// const bodyParser		 = require('body-parser');
 const methodOverride = require('method-override')
 
 // Middleware
 app.use(express.static('public'));
-app.use(bodyParser.urlencoded({extended:false}));
+app.use(express.urlencoded({ extended: false}));
+app.use(express.json());
 app.use(methodOverride('_method'));
 
 //Controller Middleware
