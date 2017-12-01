@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 //Schema
 const wordSchema = mongoose.Schema({
 	name: String,
-	hex: String,
+	hex: String
 });
 
 //Listeners
