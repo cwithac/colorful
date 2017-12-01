@@ -19,10 +19,7 @@
 + Open access two model crud application for the purpose of using Express/EJS.
 
 ### Upcoming Features
-+ Update to ES6/7
-  + async, await
-  + update Express, remove bodyParser
-  + try, catch
++ Update to ES6/7 Mongoose with model restructure
 + Data validation
 + Content sorting
 
