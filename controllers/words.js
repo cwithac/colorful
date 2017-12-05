@@ -85,15 +85,15 @@ thesaurus.put('/:id', async (req, res) => {
 //Seed Route
 //@words/seed/words
 //COLOR IS REFLECTION OF DEVELOPER HEROKU ID - MUST BE UPDATED FOR USE
-const wordSeeds = require ('../models/wordseed.js');
-	thesaurus.get ('/seed/words', async (req, res) => {
-		try {
-			const allTheWords = await Word.insertMany(wordSeeds);
-			res.redirect('/words');
-		} catch (err) {
-			res.send(err.message);
-		};
-	});
+// const wordSeeds = require ('../models/wordseed.js');
+// 	thesaurus.get ('/seed/words', async (req, res) => {
+// 		try {
+// 			const allTheWords = await Word.insertMany(wordSeeds);
+// 			res.redirect('/words');
+// 		} catch (err) {
+// 			res.send(err.message);
+// 		};
+// 	});
 
 //Listners
 module.exports = thesaurus;
