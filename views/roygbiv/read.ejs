@@ -19,9 +19,11 @@
       </section>
       <main>
         <ul>
-            <div style="background-color:<%=word.hex%>" class="word-grid">
-              <a href="/words/<%=word._id%>"><%=word.name%></a>
-            </div>
+          <% for(let i = 0; i < foundAWord.length; i++){ %>
+      			<div style="background-color:<%=foundAWord[i].hex%>" class="word-grid">
+      				<a href="/words/<%=foundAWord[i]._id%>"><%=foundAWord[i].name%></a>
+      			</div>
+      		<% } %>
         </ul>
       </main>
     </main>

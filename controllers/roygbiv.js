@@ -17,8 +17,8 @@ colors.get('/', async (req, res)=>{
 colors.get('/:id', async (req, res) => {
 	try {
 		const foundAColor = await Roygbiv.findById(req.params.id);
-		const foundAWord = await Word.findOne({'color': foundAColor.id})
-		res.render('roygbiv/read.ejs', {color: foundAColor, word: foundAWord });
+		const foundAWord = await Word.find({'color': foundAColor.id})
+		res.render('roygbiv/read.ejs', {color: foundAColor, foundAWord });
 	} catch (err) {
 		res.send (err.message);
 	};
