@@ -1,11 +1,11 @@
 //Global Variables
 const express 	= require('express');
-const router 		= express.Router();
+const thesaurus = express.Router();
 const Word      = require('../models/words.js');
 const Roygbiv   = require('../models/roygbiv.js');
 
 //Restful Routes
-router.get('/', (req, res) => {
+thesaurus.get('/', (req, res) => {
   Word.find({}, (err, foundWords)=> {
     res.render('words/index.ejs', {
       words: foundWords
@@ -13,7 +13,7 @@ router.get('/', (req, res) => {
   });
 });
 
-router.get('/create', (req, res) => {
+thesaurus.get('/create', (req, res) => {
   Roygbiv.find({}, (err, allColors)=>{
     res.render('words/create.ejs', {
       colors: allColors
@@ -21,7 +21,7 @@ router.get('/create', (req, res) => {
   })
 });
 
-router.post('/', (req, res) => {
+thesaurus.post('/', (req, res) => {
   if (req.body.name === "") {
     req.body.name = '?'
   }
@@ -38,7 +38,7 @@ router.post('/', (req, res) => {
   });
 });
 
-router.get('/:id', (req, res) => {
+thesaurus.get('/:id', (req, res) => {
   Word.findById(req.params.id, (err, foundWord)=>{
     Roygbiv.findOne({'words._id':req.params.id}, (err, foundColor)=>{
       res.render('words/read.ejs', {
@@ -49,7 +49,7 @@ router.get('/:id', (req, res) => {
   });
 });
 
-router.delete('/:id', (req, res) => {
+thesaurus.delete('/:id', (req, res) => {
   Word.findByIdAndRemove(req.params.id, () => {
     Roygbiv.findOne({'words._id':req.params.id}, (err, foundColor) => {
       foundColor.words.id(req.params.id).remove();
@@ -60,7 +60,7 @@ router.delete('/:id', (req, res) => {
   });
 });
 
-router.get('/:id/update', (req, res) => {
+thesaurus.get('/:id/update', (req, res) => {
   Word.findById(req.params.id, (err, foundWord) => {
     Roygbiv.find({}, (err, allColors) => {
       Roygbiv.findOne({'words._id':req.params.id}, (err, foundWordColor) => {
@@ -74,7 +74,7 @@ router.get('/:id/update', (req, res) => {
   });
 });
 
-router.put('/:id', (req, res) => {
+thesaurus.put('/:id', (req, res) => {
   Word.findByIdAndUpdate(req.params.id, req.body, { new: true }, (err, updatedWord) => {
     Roygbiv.findOne({'words._id' : req.params.id }, (err, foundColor) => {
       if(foundColor._id.toString() !== req.body.colorID){
@@ -100,7 +100,7 @@ router.put('/:id', (req, res) => {
 
 // //======================
 // //For development only
-// router.get('/data/json', async (req,res) => {
+// thesaurus.get('/data/json', async (req,res) => {
 // 	try {
 // 		const allTheColors = await Word.find();
 // 		res.send ( allTheColors );
@@ -111,4 +111,4 @@ router.put('/:id', (req, res) => {
 // //======================
 
 //Listners
-module.exports = router;
+module.exports = thesaurus;
