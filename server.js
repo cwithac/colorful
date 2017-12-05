@@ -3,7 +3,8 @@ const express   		 = require('express');
 const app       		 = express();
 const PORT      		 = process.env.PORT || 3000;
 const mongoose  		 = require('mongoose');
-const methodOverride = require('method-override')
+const methodOverride = require('method-override');
+const morgan				 = require('morgan');
 
 // Middleware
 app.use(express.static('public'));
