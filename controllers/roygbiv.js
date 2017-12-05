@@ -26,15 +26,15 @@ colors.get('/:id', async (req, res) => {
 
 //Seed Route
 //@roygbiv/seed/roygbiv
-const colorSeeds = require ('../models/colorseed.js');
-	colors.get ('/seed/roygbiv', async (req, res) => {
-		try {
-			const allTheColors = await Roygbiv.insertMany(colorSeeds);
-			res.redirect('/roygbiv');
-		} catch (err) {
-			res.send(err.message);
-		};
-	});
+// const colorSeeds = require ('../models/colorseed.js');
+// 	colors.get ('/seed/roygbiv', async (req, res) => {
+// 		try {
+// 			const allTheColors = await Roygbiv.insertMany(colorSeeds);
+// 			res.redirect('/roygbiv');
+// 		} catch (err) {
+// 			res.send(err.message);
+// 		};
+// 	});
 
 
 //Listners
