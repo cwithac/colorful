@@ -17,7 +17,7 @@ thesaurus.get('/', async (req, res) => {
 thesaurus.get('/create', async (req, res) => {
   try {
     const allColors = await Roygbiv.find();
-    res.render('words/create.ejs', { allColors });
+    res.render('words/create.ejs', { colors: allColors });
   } catch (err) {
     res.send(err.message);
   };
@@ -33,12 +33,10 @@ thesaurus.post('/', async (req, res) => {
   if (req.body.hex.length != 7) {
     req.body.hex = '#AAAAAA';
   }
-  if (req.body.hex.length == 6) {
-    req.body.hex = '#' + req.body.hex;
-  }
   try {
     const createdWord = await Word.create(req.body);
-    res.render('words/read.ejs', {createdWord});
+    const foundColor = await Roygbiv.findOne({'_id': createdWord.color});
+    res.render('words/read.ejs', {foundWord: createdWord, foundColor});
   } catch (err) {
     res.send(err.message);
   };
