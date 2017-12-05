@@ -29,8 +29,19 @@ colors.get('/:id', async (req, res) => {
 	};
 });
 
+//Seed Route
+//@roygbiv/seed/roygbiv
+// const colorSeeds = require ('../models/colorseed.js');
+// 	colors.get ('/seed/roygbiv', async (req, res) => {
+// 		try {
+// 			const allTheColors = await Roygbiv.insertMany(colorSeeds);
+// 			res.redirect('/roygbiv');
+// 		} catch (err) {
+// 			res.send(err.message);
+// 		};
+// 	});
 
-//POST DELETE AND UPDATE DISABLED FOR LIVE SITE
+//POST AND DELETE DISABLED FOR LIVE SITE
 // colors.post('/', async (req, res) => {
 // 	try {
 // 		const createdColor = await Roygbiv.create(req.body);
@@ -46,31 +57,7 @@ colors.get('/:id', async (req, res) => {
 // 		res.redirect('/roygbiv');
 // });
 
-// colors.get('/:id/update', (req, res) => {
-// 	Roygbiv.findById(req.params.id, (err, foundAColor) => {
-// 		res.render('roygbiv/update.ejs', {
-// 			color: foundAColor
-// 		})
-// 	});
-// });
-//
-// colors.put('/:id', (req, res) => {
-// 	Roygbiv.findByIdAndUpdate(req.params.id, req.body, () => {
-// 		res.redirect('/roygbiv');
-// 	});
-// });
 
-//Seed Route
-//@roygbiv/seed/roygbiv
-// const colorSeeds = require ('../models/colorseed.js');
-// 	colors.get ('/seed/roygbiv', async (req, res) => {
-// 		try {
-// 			const allTheColors = await Roygbiv.insertMany(colorSeeds);
-// 			res.redirect('/roygbiv');
-// 		} catch (err) {
-// 			res.send(err.message);
-// 		};
-// 	});
 
 //Listners
 module.exports = colors;
