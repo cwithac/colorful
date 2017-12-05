@@ -98,17 +98,17 @@ router.put('/:id', (req, res) => {
   });
 });
 
-//======================
-//For development only
-router.get('/data/json', async (req,res) => {
-	try {
-		const allTheColors = await Word.find();
-		res.send ( allTheColors );
-	} catch (err) {
-		res.send( err.message );
-	};
-});
-//======================
+// //======================
+// //For development only
+// router.get('/data/json', async (req,res) => {
+// 	try {
+// 		const allTheColors = await Word.find();
+// 		res.send ( allTheColors );
+// 	} catch (err) {
+// 		res.send( err.message );
+// 	};
+// });
+// //======================
 
 //Listners
 module.exports = router;

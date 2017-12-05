@@ -25,17 +25,17 @@ router.get('/:id', (req, res) => {
 	});
 });
 
-//======================
-//For development only
-router.get('/data/json', async (req,res) => {
-	try {
-		const allRoygbiv = await Roygbiv.find();
-		res.send ( allRoygbiv );
-	} catch (err) {
-		res.send( err.message );
-	};
-});
-//======================
+// //======================
+// //For development only
+// router.get('/data/json', async (req,res) => {
+// 	try {
+// 		const allRoygbiv = await Roygbiv.find();
+// 		res.send ( allRoygbiv );
+// 	} catch (err) {
+// 		res.send( err.message );
+// 	};
+// });
+// //======================
 
 
 //POST DELETE AND UPDATE DISABLED FOR LIVE SITE
