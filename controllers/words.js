@@ -103,17 +103,5 @@ thesaurus.put('/:id', (req, res) => {
   });
 });
 
-// //======================
-// //For development only
-// thesaurus.get('/data/json', async (req,res) => {
-// 	try {
-// 		const allTheColors = await Word.find();
-// 		res.send ( allTheColors );
-// 	} catch (err) {
-// 		res.send( err.message );
-// 	};
-// });
-// //======================
-
 //Listners
 module.exports = thesaurus;
