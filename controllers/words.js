@@ -67,22 +67,10 @@ thesaurus.get('/:id/update', async (req, res) => {
     const foundWord = await Word.findById(req.params.id);
     const allColors = await Roygbiv.find();
     const foundColor = await Roygbiv.find({'_id': foundWord.color});
-    // res.send({colors: allColors, color: foundColor, word: foundWord})
     res.render('words/update.ejs', {colors: allColors, color: foundColor, word: foundWord});
   } catch (err) {
     res.send(err.message);
   };
-  // Word.findById(req.params.id, (err, foundWord) => {
-  //   Roygbiv.find({}, (err, allColors) => {
-  //     Roygbiv.findOne({'words._id':req.params.id}, (err, foundWordColor) => {
-  //       res.render('words/update.ejs', {
-  //         word: foundWord,
-  //         colors: allColors,
-  //         wordColor: foundWordColor
-  //       });
-  //     });
-  //   });
-  // });
 });
 
 thesaurus.put('/:id', (req, res) => {
