@@ -41,9 +41,13 @@ thesaurus.post('/', (req, res) => {
 });
 
 thesaurus.get('/:id', async (req, res) => {
+  try {
     const foundWord = await Word.findById(req.params.id);
     const foundColor = await Roygbiv.findOne({'_id': foundWord.color});
     res.render('words/read.ejs', { foundColor, foundWord });
+  } catch (err) {
+    res.send(err.message);
+  };
 });
 
 thesaurus.delete('/:id', (req, res) => {
