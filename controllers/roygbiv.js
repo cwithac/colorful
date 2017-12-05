@@ -1,11 +1,11 @@
 //Global Variables
 const express 	= require('express');
-const router 		= express.Router();
+const colors 		= express.Router();
 const Roygbiv 	= require('../models/roygbiv.js');
 const Word 			= require('../models/words.js')
 
 //Restful Routes
-router.get('/', (req, res)=>{
+colors.get('/', (req, res)=>{
 	Roygbiv.find({}, (err, foundColors) => {
 		res.render('roygbiv/index.ejs', {
 			colors: foundColors
@@ -13,11 +13,11 @@ router.get('/', (req, res)=>{
 	});
 });
 
-router.get('/create', (req, res)=>{
+colors.get('/create', (req, res)=>{
 	res.render('roygbiv/create.ejs');
 });
 
-router.get('/:id', (req, res) => {
+colors.get('/:id', (req, res) => {
 	Roygbiv.findById(req.params.id, (err, foundAColor) => {
 		res.render('roygbiv/read.ejs', {
 			color: foundAColor
@@ -27,7 +27,7 @@ router.get('/:id', (req, res) => {
 
 // //======================
 // //For development only
-// router.get('/data/json', async (req,res) => {
+// colors.get('/data/json', async (req,res) => {
 // 	try {
 // 		const allRoygbiv = await Roygbiv.find();
 // 		res.send ( allRoygbiv );
@@ -40,13 +40,13 @@ router.get('/:id', (req, res) => {
 
 //POST DELETE AND UPDATE DISABLED FOR LIVE SITE
 
-// router.post('/', (req, res) => {
+// colors.post('/', (req, res) => {
 // 	Roygbiv.create(req.body, (err, createdColor)=>{
 // 		res.redirect('/roygbiv');
 // 	});
 // });
 //
-// router.delete('/:id', (req, res) => {
+// colors.delete('/:id', (req, res) => {
 // 	Roygbiv.findByIdAndRemove(req.params.id, (err, foundAColor) => {
 // 		const wordIDs = [];
 // 		for (let i = 0; i < foundAColor.words.length; i++) {
@@ -65,7 +65,7 @@ router.get('/:id', (req, res) => {
 // 	});
 // });
 //
-// router.get('/:id/update', (req, res) => {
+// colors.get('/:id/update', (req, res) => {
 // 	Roygbiv.findById(req.params.id, (err, foundAColor) => {
 // 		res.render('roygbiv/update.ejs', {
 // 			color: foundAColor
@@ -73,7 +73,7 @@ router.get('/:id', (req, res) => {
 // 	});
 // });
 //
-// router.put('/:id', (req, res) => {
+// colors.put('/:id', (req, res) => {
 // 	Roygbiv.findByIdAndUpdate(req.params.id, req.body, () => {
 // 		res.redirect('/roygbiv');
 // 	});
@@ -82,7 +82,7 @@ router.get('/:id', (req, res) => {
 //Seed Route
 //@roygbiv/seed/roygbiv
 // const colorSeeds = require ('../models/colorseed.js');
-// 	router.get ('/seed/roygbiv', (req, res) => {
+// 	colors.get ('/seed/roygbiv', (req, res) => {
 // 		Roygbiv.insertMany (colorSeeds, (err, colors) => {
 // 			if (err) {
 // 				console.log(err);
@@ -93,4 +93,4 @@ router.get('/:id', (req, res) => {
 // 	});
 
 //Listners
-module.exports = router;
+module.exports = colors;
