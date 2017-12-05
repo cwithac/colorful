@@ -23,21 +23,19 @@ thesaurus.get('/create', async (req, res) => {
   };
 });
 
-thesaurus.post('/', (req, res) => {
+thesaurus.post('/', async (req, res) => {
   if (req.body.name === "") {
     req.body.name = '?'
   }
   if (req.body.hex === '') {
     req.body.hex = '#AAAAAA'
   }
-  Roygbiv.findById(req.body.roygbivId, (err, foundColor)=>{
-    Word.create(req.body, (err, createdWord) => {
-      foundColor.words.push(createdWord);
-      foundColor.save((err, data)=>{
-        res.redirect('/roygbiv/' + req.body.roygbivId);
-      });
-    });
-  });
+  try {
+    const createdWord = await Word.create(req.body);
+    res.render('words/read.ejs', {createdWord});
+  } catch (err) {
+    res.send(err.message);
+  };
 });
 
 thesaurus.get('/:id', async (req, res) => {
