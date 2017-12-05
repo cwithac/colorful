@@ -21,7 +21,7 @@
 + Open access two model crud application for the purpose of using Express/EJS and dynamic data.
 
 ### Upcoming Features
-+ Data validation
++ Data validation (Hex, Color Name Input)
 
 ### Resources & Inspiration
 + Dictionary.com
