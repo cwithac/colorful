@@ -44,7 +44,7 @@ thesaurus.post('/', async (req, res) => {
 
 thesaurus.get('/:id', async (req, res) => {
   try {
-    const foundWord = await Word.findById(req.params.id);
+    const foundWord = await Word.findById(req.params.id).sort({name: 1});
     const foundColor = await Roygbiv.findOne({'_id': foundWord.color});
     res.render('words/read.ejs', { foundColor, foundWord });
   } catch (err) {
