@@ -9,13 +9,15 @@
       <% include ../partials/nav.ejs %>
     </nav>
     <main>
-    	<ul>
-    		<% for(let i = 0; i < words.length; i++){ %>
-    			<div style="background-color:<%=words[i].hex%>" class="word-grid">
-    				<a href="/words/<%=words[i]._id%>"><%=words[i].name%></a>
-    			</div>
-    		<% } %>
-    	</ul>
+      <ul>
+        <% for (word of foundWords) { %>
+            <div style="background-color:<%=word.hex%>" class="color-family">
+                <a href="/words/<%=word._id%>">
+                  <%=word.name%>
+                </a>
+            </div>
+        <% } %>
+      </ul>
     </main>
   </body>
 </html>

@@ -5,12 +5,13 @@ const Word      = require('../models/words.js');
 const Roygbiv   = require('../models/roygbiv.js');
 
 //Restful Routes
-thesaurus.get('/', (req, res) => {
-  Word.find({}, (err, foundWords)=> {
-    res.render('words/index.ejs', {
-      words: foundWords
-    });
-  });
+thesaurus.get('/', async (req, res) => {
+  try {
+    const foundWords = await Word.find().sort({name: 1}).populate('roygbiv');
+    res.render('words/index.ejs', {foundWords});
+  } catch (err) {
+    res.send(err.message);
+  };
 });
 
 thesaurus.get('/create', (req, res) => {
