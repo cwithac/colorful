@@ -4,10 +4,9 @@ const Word = require('./words.js');
 
 //Schema
 const roygbivSchema = mongoose.Schema({
-	name: String,
-	hex: String,
-	description: String,
-	words: [Word.schema]
+	name: { type: String, required: true },
+	hex: { type: String, required: true },
+	description: { type: String, required: true }
 });
 
 //Listeners
