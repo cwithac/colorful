@@ -1,13 +1,13 @@
 # Color Thesaurus
 
-![](http://i.imgur.com/nd1nm5R.png)
+![](https://i.imgur.com/ysLeQhd.png)
 
 #### [Hosted on Heroku](https://colorthesaurus.herokuapp.com/) + [Repo](https://github.com/cwithac/colorful)
 
 ### Technologies Used
 
 ```
-+ Node.js, Express, EJS
++ Node.js, Express, EJS, ES6/7
 + Mongo DB, Mongoose
 + MVC Structure | Models - Colors, Words
 + Partials: head, nav
@@ -16,12 +16,10 @@
 ```
 
 ### Notes
-+ Open access two model crud application for the purpose of using Express/EJS.
++ Open access two model crud application for the purpose of using Express/EJS and dynamic data.
 
 ### Upcoming Features
-+ Update to ES6/7 Mongoose with model restructure
 + Data validation
-+ Content sorting
 
 ### Resources & Inspiration
 + Dictionary.com
