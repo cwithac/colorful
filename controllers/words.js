@@ -52,15 +52,14 @@ thesaurus.get('/:id', async (req, res) => {
   };
 });
 
-thesaurus.delete('/:id', (req, res) => {
-  Word.findByIdAndRemove(req.params.id, () => {
-    Roygbiv.findOne({'words._id':req.params.id}, (err, foundColor) => {
-      foundColor.words.id(req.params.id).remove();
-      foundColor.save((err, data) => {
-        res.redirect('/roygbiv/' + foundColor.id)
-      })
-    })
-  });
+thesaurus.delete('/:id', async (req, res) => {
+  try {
+    const deletedWord = await Word.findByIdAndRemove(req.params.id);
+    const foundColor = await Roygbiv.findOne({'_id': deletedWord.color});
+    res.redirect('/roygbiv/' + foundColor.id)
+  } catch (err) {
+    res.send(err.message);
+  };
 });
 
 thesaurus.get('/:id/update', (req, res) => {
