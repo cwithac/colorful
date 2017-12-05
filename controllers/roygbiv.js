@@ -30,14 +30,14 @@ colors.get('/:id', async (req, res) => {
 
 //POST DELETE AND UPDATE DISABLED FOR LIVE SITE
 
-colors.post('/', async (req, res) => {
-	try {
-		const createdColor = await Roygbiv.create( req.body );
-		res.redirect('/roygbiv');
-	} catch (err) {
-		res.send (err.message);
-	};
-});
+// colors.post('/', async (req, res) => {
+// 	try {
+// 		const createdColor = await Roygbiv.create(req.body);
+// 		res.redirect('/roygbiv');
+// 	} catch (err) {
+// 		res.send(err.message);
+// 	};
+// });
 //
 // colors.delete('/:id', (req, res) => {
 // 	Roygbiv.findByIdAndRemove(req.params.id, (err, foundAColor) => {
