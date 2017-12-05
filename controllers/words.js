@@ -14,12 +14,13 @@ thesaurus.get('/', async (req, res) => {
   };
 });
 
-thesaurus.get('/create', (req, res) => {
-  Roygbiv.find({}, (err, allColors)=>{
-    res.render('words/create.ejs', {
-      colors: allColors
-    });
-  })
+thesaurus.get('/create', async (req, res) => {
+  try {
+    const allColors = await Roygbiv.find();
+    res.render('words/create.ejs', { allColors });
+  } catch (err) {
+    res.send(err.message);
+  };
 });
 
 thesaurus.post('/', (req, res) => {
@@ -39,15 +40,10 @@ thesaurus.post('/', (req, res) => {
   });
 });
 
-thesaurus.get('/:id', (req, res) => {
-  Word.findById(req.params.id, (err, foundWord)=>{
-    Roygbiv.findOne({'words._id':req.params.id}, (err, foundColor)=>{
-      res.render('words/read.ejs', {
-        color: foundColor,
-        word: foundWord
-      });
-    });
-  });
+thesaurus.get('/:id', async (req, res) => {
+    const foundWord = await Word.findById(req.params.id);
+    const foundColor = await Roygbiv.findOne({'_id': foundWord.color});
+    res.render('words/read.ejs', { foundColor, foundWord });
 });
 
 thesaurus.delete('/:id', (req, res) => {

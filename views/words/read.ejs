@@ -3,8 +3,8 @@
   <head>
     <% include ../partials/head.ejs %>
   </head>
-  <body class="container" style="background-color:<%=word.hex%>">
-    <h1><%=word.name%></h1>
+  <body class="container" style="background-color:<%=foundWord.hex%>">
+    <h1><%=foundWord.name%></h1>
     <nav>
       <% include ../partials/nav.ejs %>
     </nav>
@@ -12,16 +12,16 @@
       <section>
         <div class="content">
           <span class="text-label">Hex Color Code:</span>
-          <span style="color:<%=word.hex%>"><%=word.hex%></span><br/>
+          <span style="color:<%=foundWord.hex%>"><%=foundWord.hex%></span><br/>
           <span class="text-label">Color Family:</span>
-          <a style="color:<%=color.hex%>" href="/roygbiv/<%=color._id%>"><%=color.name%></a>
+          <a style="color:<%=foundColor.hex%>" href="/roygbiv/<%=foundColor._id%>"><%=foundColor.name%></a>
         </div>
       </section>
       <section class="edit-delete">
-        <form class="show-form" action="/words/<%=word._id%>?_method=DELETE" method="post">
+        <form class="show-form" action="/words/<%=foundWord._id%>?_method=DELETE" method="post">
             <input id="edit-delete-button" type="submit" value="delete"/>
         </form>
-        <a href="/words/<%=word._id%>/update">edit</a>
+        <a href="/words/<%=foundWord._id%>/update">edit</a>
       </section>
     </main>
   </body>
