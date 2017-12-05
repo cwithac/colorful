@@ -2,6 +2,8 @@
 
 ![](https://i.imgur.com/ysLeQhd.png)
 
+![](https://i.imgur.com/fllGXmE.png)
+
 #### [Hosted on Heroku](https://colorthesaurus.herokuapp.com/) + [Repo](https://github.com/cwithac/colorful)
 
 ### Technologies Used
