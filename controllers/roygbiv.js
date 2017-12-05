@@ -5,12 +5,13 @@ const Roygbiv 	= require('../models/roygbiv.js');
 const Word 			= require('../models/words.js')
 
 //Restful Routes
-colors.get('/', (req, res)=>{
-	Roygbiv.find({}, (err, foundColors) => {
-		res.render('roygbiv/index.ejs', {
-			colors: foundColors
-		});
-	});
+colors.get('/', async (req, res)=>{
+	try {
+		const foundColors = await Roygbiv.find().sort( { name: 1} ).populate('words');
+		res.render('roygbiv/index.ejs', {foundColors});
+	} catch (err) {
+		res.send( err.message );
+	};
 });
 
 colors.get('/create', (req, res)=>{

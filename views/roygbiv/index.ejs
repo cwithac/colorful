@@ -10,13 +10,13 @@
     </nav>
     <main>
     <ul>
-        <% for(let i = 0; i < colors.length; i++){ %>
-            <div style="background-color:<%=colors[i].hex%>" class="color-family">
-                <a href="/roygbiv/<%=colors[i]._id%>">
-                  <%=colors[i].name%>
-                </a>
-            </div>
-        <% } %>
+      <% for (color of foundColors) { %>
+          <div style="background-color:<%=color.hex%>" class="color-family">
+              <a href="/roygbiv/<%=color._id%>">
+                <%=color.name%>
+              </a>
+          </div>
+      <% } %>
     </ul>
 </main>
   </body>
