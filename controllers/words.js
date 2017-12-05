@@ -73,28 +73,13 @@ thesaurus.get('/:id/update', async (req, res) => {
   };
 });
 
-thesaurus.put('/:id', (req, res) => {
-  Word.findByIdAndUpdate(req.params.id, req.body, { new: true }, (err, updatedWord) => {
-    Roygbiv.findOne({'words._id' : req.params.id }, (err, foundColor) => {
-      if(foundColor._id.toString() !== req.body.colorID){
-        foundColor.words.id(req.params.id).remove();
-        foundColor.save((err, savedFoundColor) => {
-          Roygbiv.findById(req.body.colorID, (err, newColor) => {
-            newColor.words.push(updatedWord);
-            newColor.save((err, savedFoundColor) => {
-              res.redirect('/roygbiv/' + foundColor.id)
-            });
-          });
-        });
-      } else {
-        foundColor.words.id(req.params.id).remove();
-        foundColor.words.push(updatedWord);
-        foundColor.save((err, data) => {
-          res.redirect('/roygbiv/' + foundColor.id)
-        });
-      }
-    });
-  });
+thesaurus.put('/:id', async (req, res) => {
+  try {
+    const updatedWord = await Word.findByIdAndUpdate(req.params.id, req.body, {new: true});
+    res.redirect('/words/' + updatedWord.id)
+  } catch (err) {
+    res.send(err.message);
+  };
 });
 
 //Listners
