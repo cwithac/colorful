@@ -19,21 +19,8 @@
       </section>
       <main>
         <ul>
-          <% for (let i = 0; i < color.words.length; i++) { %>
-            <div style="background-color:<%=color.words[i].hex%>" class="word-grid">
-              <a href="/words/<%=color.words[i]._id%>"><%=color.words[i].name%></a>
-            </div>
-          <% } %>
         </ul>
       </main>
-      <!-- <section>
-        <form action="/roygbiv/<%=color._id%>?_method=DELETE" method="POST">
-          <input type="submit" value="Delete <%=color.name%>">
-        </form>
-      </section>
-      <section>
-        <a href="/roygbiv/<%=color._id%>/update">Update</a>
-      </section> -->
     </main>
   </body>
 </html>

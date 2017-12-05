@@ -18,34 +18,26 @@ colors.get('/create', (req, res)=>{
 	res.render('roygbiv/create.ejs');
 });
 
-colors.get('/:id', (req, res) => {
-	Roygbiv.findById(req.params.id, (err, foundAColor) => {
-		res.render('roygbiv/read.ejs', {
-			color: foundAColor
-		});
-	});
+colors.get('/:id', async (req, res) => {
+	try {
+		const foundAColor = await Roygbiv.findById(req.params.id);
+		res.render('roygbiv/read.ejs', {color: foundAColor});
+	} catch (err) {
+		res.send (err.message);
+	};
 });
-
-// //======================
-// //For development only
-// colors.get('/data/json', async (req,res) => {
-// 	try {
-// 		const allRoygbiv = await Roygbiv.find();
-// 		res.send ( allRoygbiv );
-// 	} catch (err) {
-// 		res.send( err.message );
-// 	};
-// });
-// //======================
 
 
 //POST DELETE AND UPDATE DISABLED FOR LIVE SITE
 
-// colors.post('/', (req, res) => {
-// 	Roygbiv.create(req.body, (err, createdColor)=>{
-// 		res.redirect('/roygbiv');
-// 	});
-// });
+colors.post('/', async (req, res) => {
+	try {
+		const createdColor = await Roygbiv.create( req.body );
+		res.redirect('/roygbiv');
+	} catch (err) {
+		res.send (err.message);
+	};
+});
 //
 // colors.delete('/:id', (req, res) => {
 // 	Roygbiv.findByIdAndRemove(req.params.id, (err, foundAColor) => {
