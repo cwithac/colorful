@@ -14,11 +14,6 @@ colors.get('/', async (req, res)=>{
 	};
 });
 
-//POST DELETE AND UPDATE DISABLED FOR LIVE SITE
-// colors.get('/create', (req, res)=>{
-// 	res.render('roygbiv/create.ejs');
-// });
-
 colors.get('/:id', async (req, res) => {
 	try {
 		const foundAColor = await Roygbiv.findById(req.params.id);
@@ -40,23 +35,6 @@ colors.get('/:id', async (req, res) => {
 // 			res.send(err.message);
 // 		};
 // 	});
-
-//POST AND DELETE DISABLED FOR LIVE SITE
-// colors.post('/', async (req, res) => {
-// 	try {
-// 		const createdColor = await Roygbiv.create(req.body);
-// 		res.redirect('/roygbiv');
-// 	} catch (err) {
-// 		res.send(err.message);
-// 	};
-// });
-
-// colors.delete('/:id', async (req, res) => {
-// 		const color = await Roygbiv.findByIdAndRemove(req.params.id);
-// 		await Word.remove({ color: color._id});
-// 		res.redirect('/roygbiv');
-// });
-
 
 
 //Listners
