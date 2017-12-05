@@ -25,10 +25,16 @@ thesaurus.get('/create', async (req, res) => {
 
 thesaurus.post('/', async (req, res) => {
   if (req.body.name === "") {
-    req.body.name = '?'
+    req.body.name = '?';
   }
   if (req.body.hex === '') {
-    req.body.hex = '#AAAAAA'
+    req.body.hex = '#AAAAAA';
+  }
+  if (req.body.hex.length != 7) {
+    req.body.hex = '#AAAAAA';
+  }
+  if (req.body.hex.length == 6) {
+    req.body.hex = '#' + req.body.hex;
   }
   try {
     const createdWord = await Word.create(req.body);
