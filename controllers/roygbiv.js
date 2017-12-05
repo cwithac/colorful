@@ -30,35 +30,22 @@ colors.get('/:id', async (req, res) => {
 
 //POST DELETE AND UPDATE DISABLED FOR LIVE SITE
 
-colors.post('/', async (req, res) => {
-	try {
-		const createdColor = await Roygbiv.create(req.body);
-		// res.send(createdColor)
-		res.redirect('/roygbiv');
-	} catch (err) {
-		res.send(err.message);
-	};
-});
-//
-// colors.delete('/:id', (req, res) => {
-// 	Roygbiv.findByIdAndRemove(req.params.id, (err, foundAColor) => {
-// 		const wordIDs = [];
-// 		for (let i = 0; i < foundAColor.words.length; i++) {
-// 			wordIDs.push(foundAColor.words[i]._id);
-// 		}
-// 		Word.remove(
-// 			{
-// 				_id: {
-// 					$in: wordIDs
-// 				}
-// 			},
-// 			(err, data) => {
-// 				res.redirect('/roygbiv');
-// 			}
-// 		);
-// 	});
+// colors.post('/', async (req, res) => {
+// 	try {
+// 		const createdColor = await Roygbiv.create(req.body);
+// 		// res.send(createdColor)
+// 		res.redirect('/roygbiv');
+// 	} catch (err) {
+// 		res.send(err.message);
+// 	};
 // });
-//
+
+// colors.delete('/:id', async (req, res) => {
+// 		const color = await Roygbiv.findByIdAndRemove(req.params.id);
+// 		await Word.remove({ color: color._id});
+// 		res.redirect('/roygbiv');
+// });
+
 // colors.get('/:id/update', (req, res) => {
 // 	Roygbiv.findById(req.params.id, (err, foundAColor) => {
 // 		res.render('roygbiv/update.ejs', {
