@@ -14,9 +14,10 @@ colors.get('/', async (req, res)=>{
 	};
 });
 
-colors.get('/create', (req, res)=>{
-	res.render('roygbiv/create.ejs');
-});
+//POST DELETE AND UPDATE DISABLED FOR LIVE SITE
+// colors.get('/create', (req, res)=>{
+// 	res.render('roygbiv/create.ejs');
+// });
 
 colors.get('/:id', async (req, res) => {
 	try {
@@ -30,11 +31,9 @@ colors.get('/:id', async (req, res) => {
 
 
 //POST DELETE AND UPDATE DISABLED FOR LIVE SITE
-
 // colors.post('/', async (req, res) => {
 // 	try {
 // 		const createdColor = await Roygbiv.create(req.body);
-// 		// res.send(createdColor)
 // 		res.redirect('/roygbiv');
 // 	} catch (err) {
 // 		res.send(err.message);
