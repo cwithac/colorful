@@ -1,8 +1,6 @@
 # Color Thesaurus
 
-![](https://i.imgur.com/ewLDzfH.png)
-
-![](https://i.imgur.com/CkH4bqi.png)
+![](https://i.imgur.com/oOzopX9.png)
 
 #### [Hosted on Heroku](https://colorthesaurus.herokuapp.com/) + [Repo](https://github.com/cwithac/colorful)
 
