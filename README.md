@@ -1,6 +1,6 @@
 # Color Thesaurus
 
-![](https://i.imgur.com/ysLeQhd.png)
+![](https://i.imgur.com/CxXuAq8.png)
 
 ![](https://i.imgur.com/fllGXmE.png)
 
